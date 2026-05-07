@@ -1,0 +1,1069 @@
+<!--
+=======================================================
+  GITHUB PAGES DEPLOYMENT — 3 STEPS
+=======================================================
+  1. Go to github.com → "New Repository"
+     Name it: deepthi-valkyrie  → Create Repository
+  2. Upload this file and rename it: index.html
+     (drag-drop into the repo or click "Add file → Upload files")
+  3. Settings → Pages → Source: "Deploy from branch"
+     → Branch: main → Folder: / (root) → Save
+     Live URL: https://[yourusername].github.io/deepthi-valkyrie
+
+  TIPS:
+  - Also upload your resume PDF as: resume.pdf (same repo)
+  - Share the link in your application AND outreach emails
+  - Update the LinkedIn URL to your real profile before going live
+=======================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Deepthi Rajesh — Business Development Analyst @ Valkyrie Enterprises</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Figtree:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   DESIGN SYSTEM — Steel/Ember palette
+   Inspired by defense precision + human grit
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+:root {
+  --steel-darkest: #0a0e14;
+  --steel-dark:    #111722;
+  --steel-mid:     #1c2534;
+  --steel-light:   #2e3f56;
+  --steel-mist:    #4a6082;
+  --ember:         #e05c2a;
+  --ember-pale:    #fdeee7;
+  --amber:         #d4a843;
+  --amber-pale:    #fdf4e3;
+  --ice:           #c8d8e8;
+  --ice-pale:      #edf3f9;
+  --white:         #ffffff;
+  --paper:         #f5f4f1;
+
+  --mono: 'JetBrains Mono', monospace;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Figtree', system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--steel-darkest);
+  color: var(--white);
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+/* ━━━━━ NAV ━━━━━ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 4vw;
+  background: rgba(10,14,20,0.88);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(200,216,232,0.1);
+}
+.nav-id {
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.nav-badge {
+  width: 32px; height: 32px; border-radius: 4px;
+  background: var(--ember);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: 0.75rem; font-weight: 500;
+  color: var(--white);
+}
+.nav-name {
+  font-family: var(--serif);
+  font-size: 1.1rem; font-weight: 600;
+  color: var(--white); letter-spacing: 0.02em;
+}
+.nav-links {
+  display: flex; gap: 1.8rem; list-style: none;
+}
+.nav-links a {
+  font-size: 0.78rem; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ice); text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--ember); }
+.nav-apply {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  background: var(--ember);
+  color: var(--white);
+  font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  text-decoration: none; border-radius: 3px;
+  transition: opacity 0.2s;
+}
+.nav-apply:hover { opacity: 0.85; }
+
+/* ━━━━━ HERO ━━━━━ */
+#hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding: 9rem 4vw 5rem;
+  position: relative; overflow: hidden;
+  background:
+    radial-gradient(ellipse 70% 55% at 90% 50%, rgba(224,92,42,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 5% 80%, rgba(212,168,67,0.07) 0%, transparent 55%),
+    var(--steel-darkest);
+}
+
+/* grid texture overlay */
+#hero::before {
+  content: '';
+  position: absolute; inset: 0; z-index: 0;
+  background-image:
+    linear-gradient(rgba(200,216,232,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200,216,232,0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.hero-wrap {
+  position: relative; z-index: 1;
+  max-width: 1120px; margin: 0 auto; width: 100%;
+  display: grid; grid-template-columns: 1.1fr 0.9fr;
+  gap: 5rem; align-items: center;
+}
+
+.hero-eyebrow {
+  display: flex; align-items: center; gap: 0.75rem;
+  margin-bottom: 1.6rem;
+}
+.pill {
+  display: inline-block;
+  font-family: var(--mono); font-size: 0.68rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.3rem 0.75rem; border-radius: 2px;
+}
+.pill-ember { background: rgba(224,92,42,0.15); color: var(--ember); border: 1px solid rgba(224,92,42,0.3); }
+.pill-ice   { background: rgba(200,216,232,0.1); color: var(--ice);   border: 1px solid rgba(200,216,232,0.2); }
+
+.hero-h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.6rem, 5.5vw, 4.4rem);
+  font-weight: 700; line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  margin-bottom: 1.4rem;
+}
+.hero-h1 em { font-style: italic; color: var(--ember); }
+
+.hero-sub {
+  font-size: 1rem; color: var(--ice);
+  line-height: 1.8; max-width: 500px;
+  margin-bottom: 2.4rem;
+}
+
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-ember {
+  display: inline-block; padding: 0.85rem 1.8rem;
+  background: var(--ember); color: var(--white);
+  font-weight: 600; font-size: 0.88rem;
+  text-decoration: none; border-radius: 3px;
+  letter-spacing: 0.03em;
+  box-shadow: 0 6px 28px rgba(224,92,42,0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-ember:hover { transform: translateY(-2px); box-shadow: 0 10px 36px rgba(224,92,42,0.5); }
+.btn-ghost {
+  display: inline-block; padding: 0.85rem 1.8rem;
+  border: 1.5px solid rgba(200,216,232,0.3); color: var(--ice);
+  font-weight: 500; font-size: 0.88rem;
+  text-decoration: none; border-radius: 3px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-ghost:hover { border-color: var(--ice); color: var(--white); }
+
+/* Stats card */
+.hero-card {
+  background: var(--steel-mid);
+  border: 1px solid rgba(200,216,232,0.1);
+  border-radius: 12px; padding: 2.4rem;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+}
+.card-label {
+  font-family: var(--mono); font-size: 0.65rem;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--steel-mist); margin-bottom: 1.6rem;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.card-label::before {
+  content: '';
+  display: inline-block; width: 24px; height: 1px;
+  background: var(--steel-mist);
+}
+.stats-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1.6rem;
+}
+.stat { }
+.stat .num {
+  font-family: var(--serif);
+  font-size: 2.8rem; font-weight: 700;
+  line-height: 1; display: block;
+  color: var(--white); margin-bottom: 0.3rem;
+}
+.stat .num .unit { color: var(--ember); }
+.stat .desc {
+  font-size: 0.73rem; color: var(--steel-mist);
+  text-transform: uppercase; letter-spacing: 0.06em;
+  font-family: var(--mono);
+}
+.stat-rule {
+  grid-column: 1 / -1;
+  height: 1px;
+  background: rgba(200,216,232,0.08);
+}
+.clearance-note {
+  margin-top: 1.6rem;
+  padding: 0.9rem 1.1rem;
+  background: rgba(212,168,67,0.08);
+  border: 1px solid rgba(212,168,67,0.2);
+  border-radius: 6px;
+  font-size: 0.78rem; color: var(--amber);
+  font-family: var(--mono); line-height: 1.5;
+}
+
+/* ━━━━━ SHARED SECTION STYLES ━━━━━ */
+section { padding: 7rem 4vw; }
+.container { max-width: 1120px; margin: 0 auto; }
+.section-label {
+  display: flex; align-items: center; gap: 0.75rem;
+  margin-bottom: 1.2rem;
+}
+.section-label span {
+  font-family: var(--mono); font-size: 0.65rem;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--ember);
+}
+.section-label::after {
+  content: '';
+  flex: 1; height: 1px;
+  background: rgba(200,216,232,0.1);
+  max-width: 120px;
+}
+h2.section-title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700; line-height: 1.15;
+  margin-bottom: 1rem; letter-spacing: -0.01em;
+}
+.section-sub {
+  font-size: 0.97rem; line-height: 1.8;
+  color: var(--ice); max-width: 600px;
+  margin-bottom: 3.5rem;
+}
+
+/* ━━━━━ COMPANY INTEL ━━━━━ */
+#company { background: var(--steel-dark); }
+
+.intel-grid {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.4rem; margin-bottom: 2rem;
+}
+.intel-card {
+  background: var(--steel-mid);
+  border: 1px solid rgba(200,216,232,0.08);
+  border-top: 2px solid var(--ember);
+  border-radius: 6px; padding: 1.8rem;
+  transition: border-color 0.25s;
+}
+.intel-card:hover { border-color: var(--ember); }
+.intel-card .ic-num {
+  font-family: var(--mono); font-size: 0.62rem;
+  color: var(--steel-mist); letter-spacing: 0.1em;
+  margin-bottom: 0.6rem; display: block;
+}
+.intel-card h3 {
+  font-family: var(--serif); font-size: 1.15rem;
+  font-weight: 600; color: var(--white);
+  margin-bottom: 0.7rem; line-height: 1.3;
+}
+.intel-card p {
+  font-size: 0.86rem; color: var(--ice);
+  line-height: 1.75;
+}
+.intel-highlight {
+  background: var(--steel-mid);
+  border: 1px solid rgba(212,168,67,0.25);
+  border-radius: 8px; padding: 1.8rem 2.2rem;
+  font-size: 0.95rem; color: var(--ice);
+  line-height: 1.85;
+}
+.intel-highlight strong { color: var(--amber); }
+
+/* ━━━━━ PROBLEMS ━━━━━ */
+#problems { background: var(--steel-darkest); }
+
+.problems-list {
+  display: flex; flex-direction: column; gap: 1rem;
+}
+.prob {
+  display: grid; grid-template-columns: 80px 1fr;
+  gap: 1.6rem; align-items: start;
+  background: var(--steel-mid);
+  border: 1px solid rgba(200,216,232,0.07);
+  border-radius: 8px; padding: 1.8rem 2rem;
+  transition: border-color 0.2s, background 0.2s;
+  position: relative; overflow: hidden;
+}
+.prob::before {
+  content: '';
+  position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: var(--ember);
+  opacity: 0; transition: opacity 0.2s;
+}
+.prob:hover { border-color: rgba(224,92,42,0.3); }
+.prob:hover::before { opacity: 1; }
+.prob-n {
+  font-family: var(--serif);
+  font-size: 3.5rem; font-weight: 700;
+  color: rgba(200,216,232,0.08); line-height: 1;
+  text-align: right; padding-top: 0.2rem;
+}
+.prob-body h3 {
+  font-size: 1rem; font-weight: 600;
+  color: var(--white); margin-bottom: 0.4rem;
+  line-height: 1.35;
+}
+.prob-body p {
+  font-size: 0.875rem; color: var(--ice);
+  line-height: 1.75;
+}
+.prob-tag {
+  display: inline-block; margin-top: 0.75rem;
+  font-family: var(--mono); font-size: 0.67rem;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ember); border: 1px solid rgba(224,92,42,0.3);
+  padding: 0.2rem 0.6rem; border-radius: 2px;
+}
+
+/* ━━━━━ WHY ME ━━━━━ */
+#whyme {
+  background: var(--steel-dark);
+}
+.metrics-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+.mcard {
+  background: var(--steel-darkest);
+  border: 1px solid rgba(200,216,232,0.08);
+  border-radius: 8px; padding: 2rem;
+  position: relative;
+  transition: transform 0.2s, border-color 0.2s;
+}
+.mcard:hover { transform: translateY(-3px); border-color: rgba(200,216,232,0.18); }
+.mcard .big {
+  font-family: var(--serif);
+  font-size: 3rem; font-weight: 700; line-height: 1;
+  display: block; margin-bottom: 0.6rem;
+  color: var(--ember);
+}
+.mcard .ctx {
+  font-size: 0.83rem; color: var(--ice); line-height: 1.7;
+}
+.mcard .ctx strong { color: var(--white); }
+.mcard .src {
+  display: block; margin-top: 1rem;
+  font-family: var(--mono); font-size: 0.65rem;
+  letter-spacing: 0.07em; text-transform: uppercase;
+  color: var(--steel-mist);
+}
+
+/* ━━━━━ 30-60-90 ━━━━━ */
+#plan { background: var(--steel-darkest); }
+
+.plan-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem; position: relative;
+}
+.plan-grid::before {
+  content: '';
+  position: absolute; top: 2.8rem;
+  left: calc(16.66% + 28px); right: calc(16.66% + 28px);
+  height: 1px;
+  background: linear-gradient(90deg, var(--ember), var(--amber));
+  z-index: 0;
+}
+.pcard {
+  background: var(--steel-mid);
+  border: 1px solid rgba(200,216,232,0.08);
+  border-radius: 8px; padding: 2rem 1.8rem;
+  position: relative; z-index: 1;
+}
+.pcard-dot {
+  width: 56px; height: 56px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: 0.68rem;
+  font-weight: 500; letter-spacing: 0.04em;
+  margin-bottom: 1.4rem;
+}
+.dot-a { background: var(--ember); color: var(--white); }
+.dot-b { background: var(--steel-light); color: var(--ice); border: 1px solid rgba(200,216,232,0.2); }
+.dot-c { background: var(--amber); color: var(--steel-darkest); }
+.pcard h3 {
+  font-family: var(--serif); font-size: 1.4rem;
+  font-weight: 700; color: var(--white);
+  margin-bottom: 0.3rem;
+}
+.pcard .phase-tag {
+  font-family: var(--mono); font-size: 0.65rem;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--steel-mist); display: block;
+  margin-bottom: 1.2rem;
+}
+.pcard ul { list-style: none; }
+.pcard ul li {
+  font-size: 0.84rem; color: var(--ice);
+  padding: 0.5rem 0; line-height: 1.55;
+  border-bottom: 1px solid rgba(200,216,232,0.06);
+  display: flex; align-items: flex-start; gap: 0.5rem;
+}
+.pcard ul li::before {
+  content: '//';
+  font-family: var(--mono); font-size: 0.7rem;
+  color: var(--ember); flex-shrink: 0; margin-top: 0.05rem;
+}
+.pcard .deliverable {
+  margin-top: 1.1rem; padding: 0.8rem 1rem;
+  background: rgba(224,92,42,0.08);
+  border: 1px solid rgba(224,92,42,0.2);
+  border-radius: 4px;
+  font-size: 0.78rem; color: var(--ember);
+  font-family: var(--mono); line-height: 1.5;
+}
+.pcard .tools {
+  margin-top: 0.8rem;
+  font-family: var(--mono); font-size: 0.65rem;
+  letter-spacing: 0.05em; color: var(--steel-mist);
+  text-transform: uppercase;
+}
+
+/* ━━━━━ PROJECTS ━━━━━ */
+#projects { background: var(--steel-dark); }
+
+.projects-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+.pjcard {
+  background: var(--steel-darkest);
+  border: 1px solid rgba(200,216,232,0.08);
+  border-radius: 8px; padding: 2rem;
+  transition: border-color 0.25s;
+}
+.pjcard:hover { border-color: rgba(224,92,42,0.35); }
+.pj-cat {
+  font-family: var(--mono); font-size: 0.65rem;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--ember); margin-bottom: 0.75rem; display: block;
+}
+.pjcard h3 {
+  font-family: var(--serif); font-size: 1.2rem;
+  font-weight: 600; color: var(--white);
+  margin-bottom: 1.2rem; line-height: 1.3;
+}
+.pj-row { margin-bottom: 1rem; }
+.pj-rl {
+  font-family: var(--mono); font-size: 0.62rem;
+  text-transform: uppercase; letter-spacing: 0.09em;
+  color: var(--amber); margin-bottom: 0.2rem; display: block;
+}
+.pj-row p { font-size: 0.83rem; color: var(--ice); line-height: 1.7; }
+.pj-badge {
+  display: inline-block; margin-top: 0.9rem;
+  background: rgba(212,168,67,0.1);
+  border: 1px solid rgba(212,168,67,0.25);
+  color: var(--amber); border-radius: 3px;
+  padding: 0.3rem 0.7rem;
+  font-family: var(--mono); font-size: 0.7rem;
+  letter-spacing: 0.04em;
+}
+
+/* ━━━━━ CTA ━━━━━ */
+#cta {
+  background: var(--steel-darkest);
+  text-align: center;
+  padding: 8rem 4vw;
+  position: relative; overflow: hidden;
+}
+#cta::before {
+  content: '';
+  position: absolute; inset: 0; z-index: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(224,92,42,0.08) 0%, transparent 65%);
+}
+#cta .container { position: relative; z-index: 1; }
+#cta .cta-label { justify-content: center; margin-bottom: 1.4rem; }
+#cta h2 {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 700; line-height: 1.12;
+  max-width: 760px; margin: 0 auto 1.4rem;
+  letter-spacing: -0.01em;
+}
+#cta h2 em { font-style: italic; color: var(--ember); }
+#cta p {
+  color: var(--ice); max-width: 520px;
+  margin: 0 auto 2.6rem; line-height: 1.8;
+}
+.cta-row {
+  display: flex; justify-content: center;
+  gap: 1rem; flex-wrap: wrap;
+}
+.btn-amber {
+  display: inline-block; padding: 0.9rem 2rem;
+  background: var(--amber); color: var(--steel-darkest);
+  font-weight: 700; font-size: 0.88rem;
+  text-decoration: none; border-radius: 3px;
+  transition: opacity 0.2s;
+}
+.btn-amber:hover { opacity: 0.85; }
+.contact-meta {
+  margin-top: 2rem; font-size: 0.82rem; color: var(--steel-mist);
+  font-family: var(--mono);
+}
+.contact-meta a { color: var(--ice); text-decoration: none; }
+.contact-meta a:hover { color: var(--ember); }
+
+/* ━━━━━ FOOTER ━━━━━ */
+footer {
+  background: var(--steel-dark); color: var(--steel-mist);
+  text-align: center; padding: 2rem 4vw;
+  font-size: 0.78rem; font-family: var(--mono);
+  border-top: 1px solid rgba(200,216,232,0.06);
+}
+footer a { color: var(--ember); text-decoration: none; }
+
+/* ━━━━━ SCROLL REVEAL ━━━━━ */
+.reveal {
+  opacity: 0; transform: translateY(22px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.in { opacity: 1; transform: none; }
+
+/* ━━━━━ RESPONSIVE ━━━━━ */
+@media (max-width: 960px) {
+  .hero-wrap { grid-template-columns: 1fr; gap: 3rem; }
+  .intel-grid,
+  .metrics-grid,
+  .plan-grid,
+  .projects-grid { grid-template-columns: 1fr; }
+  .plan-grid::before { display: none; }
+  nav .nav-links { display: none; }
+}
+@media (max-width: 640px) {
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .prob { grid-template-columns: 50px 1fr; }
+  .prob-n { font-size: 2.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ━━━━━ NAV ━━━━━ -->
+<nav>
+  <div class="nav-id">
+    <div class="nav-badge">DR</div>
+    <span class="nav-name">Deepthi Rajesh</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#company">Intel</a></li>
+    <li><a href="#problems">Problems</a></li>
+    <li><a href="#plan">90-Day Plan</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#cta">Contact</a></li>
+  </ul>
+  <a href="#cta" class="nav-apply">Let's Talk</a>
+</nav>
+
+<!-- ━━━━━ HERO ━━━━━ -->
+<section id="hero">
+  <div class="hero-wrap">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <span class="pill pill-ember">Business Development Analyst</span>
+        <span class="pill pill-ice">Valkyrie Enterprises</span>
+      </div>
+      <h1 class="hero-h1">
+        How Deepthi Rajesh Will Help <em>Valkyrie's Mission Solutions</em> Win More Government Contracts
+      </h1>
+      <p class="hero-sub">
+        Data analyst with 2+ years building intelligence pipelines, competitive research, 
+        and executive briefings — now applying those skills to DoD BD pipeline, proposal 
+        support, and competitive intelligence for Valkyrie's Mission Solutions team.
+      </p>
+      <div class="hero-actions">
+        <a href="#plan" class="btn-ember">See My 30-60-90 Day Plan</a>
+        <a href="#whyme" class="btn-ghost">The Numbers Behind the Hire</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-card">
+        <div class="card-label">Impact by the numbers</div>
+        <div class="stats-grid">
+          <div class="stat">
+            <span class="num">$45<span class="unit">K</span></span>
+            <span class="desc">Billing discrepancies recovered</span>
+          </div>
+          <div class="stat">
+            <span class="num">40<span class="unit">%</span></span>
+            <span class="desc">Reporting errors eliminated</span>
+          </div>
+          <div class="stat-rule"></div>
+          <div class="stat">
+            <span class="num">50<span class="unit">%</span></span>
+            <span class="desc">Faster stakeholder alignment</span>
+          </div>
+          <div class="stat">
+            <span class="num">4.0</span>
+            <span class="desc">GPA — DePaul Kellstadt MBA</span>
+          </div>
+        </div>
+        <div class="clearance-note">
+          ⚠ &nbsp;Able &amp; willing to pursue DoD Secret Clearance · Chicago, IL → Virginia Beach / Remote
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━ COMPANY INTEL ━━━━━ -->
+<section id="company">
+  <div class="container">
+    <div class="section-label"><span>Company Intelligence</span></div>
+    <h2 class="section-title">I've Studied Valkyrie — Here's What I Know</h2>
+    <p class="section-sub">
+      Valkyrie isn't just a defense contractor. It's a ~$200M, 850-person mission-critical 
+      engineering firm in the middle of a major growth phase — and the Mission Solutions 
+      business unit is at the center of it.
+    </p>
+
+    <div class="intel-grid">
+      <div class="intel-card reveal">
+        <span class="ic-num">01 / BUSINESS MODEL</span>
+        <h3>How Valkyrie Makes Money</h3>
+        <p>
+          Valkyrie generates revenue through long-term DoD and federal contracts — spanning 
+          systems engineering, C5I systems, missile defense, modeling &amp; simulation, maritime 
+          modernization, and critical communications. Customers include the U.S. Navy, Army, 
+          Air Force, NATO, and State Department. Revenue is locked in through multi-year 
+          contract vehicles, with ~$193M in government contract revenue over the past 3 years.
+        </p>
+      </div>
+      <div class="intel-card reveal">
+        <span class="ic-num">02 / STRATEGIC PRIORITY</span>
+        <h3>The Mission Solutions Growth Push</h3>
+        <p>
+          In April 2026, Valkyrie brought in Joyner Livingston — a 23-year defense veteran 
+          formerly of Deloitte and SAIC — as SVP of Mission Solutions, tasked specifically 
+          with leading growth strategy and BD functions. That hire signals one thing: Valkyrie 
+          is actively investing in winning new contracts and expanding the portfolio. This role 
+          exists to fuel that engine.
+        </p>
+      </div>
+      <div class="intel-card reveal">
+        <span class="ic-num">03 / COMPETITIVE POSITION</span>
+        <h3>Differentiated by Depth &amp; Speed</h3>
+        <p>
+          Against peers like TeraLogics and large primes, Valkyrie competes on the ability 
+          to combine big-business discipline with small-business responsiveness. Its recent 
+          NATO JTLS-GO contract expansion and acquisition of Optical Sciences Corporation 
+          (missile defense/space sensors) show a company deliberately broadening its technical 
+          portfolio — expanding the BD surface area that this role supports.
+        </p>
+      </div>
+    </div>
+
+    <div class="intel-highlight reveal">
+      <strong>Why this role matters right now:</strong> Valkyrie just restructured its Mission Solutions 
+      leadership, landed a new NATO contract, and acquired a missile defense firm — all signals 
+      of a company aggressively pursuing new opportunities. A BD Analyst who can process 
+      acquisition documents, build competitive intelligence, and support briefing development 
+      is exactly the horsepower this growth push needs. That's precisely what I've been doing 
+      — for 2+ years, across finance, operations, and technical stakeholders.
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━ PROBLEMS I'LL SOLVE ━━━━━ -->
+<section id="problems">
+  <div class="container">
+    <div class="section-label"><span>Value Proposition</span></div>
+    <h2 class="section-title">5 BD Problems I Can Solve for Mission Solutions</h2>
+    <p class="section-sub">
+      Each problem maps to the actual responsibilities in the job description — and to 
+      what I've already done in my prior roles.
+    </p>
+
+    <div class="problems-list">
+
+      <div class="prob reveal">
+        <div class="prob-n">01</div>
+        <div class="prob-body">
+          <h3>Pipeline Intelligence Is Scattered — No Single Source of Truth for Opportunities</h3>
+          <p>
+            Government BD pipelines are complex: multiple acquisition pathways, budget cycles, 
+            planning documents, and opportunity trackers that often live in disconnected places. 
+            I built SQL pipelines and centralized data governance frameworks that consolidated 
+            5,000+ records into a single Snowflake warehouse — reducing cross-team reporting 
+            errors by 40%. I can apply that same framework to building and maintaining a 
+            robust, reliable opportunity pipeline for Mission Solutions.
+          </p>
+          <span class="prob-tag">Pipeline Development · Data Infrastructure · Action Tracking</span>
+        </div>
+      </div>
+
+      <div class="prob reveal">
+        <div class="prob-n">02</div>
+        <div class="prob-body">
+          <h3>Competitive Intelligence on Adversaries and Peers Takes Too Long to Compile</h3>
+          <p>
+            Defense BD requires continuous tracking of what competitors are bidding on, 
+            winning, and losing — and translating that into actionable strategy. I analyzed 
+            $144B markets, tracked competitor strategies across ride-hailing, and built 
+            regression models on 500+ campaign datasets. I can turn those research skills 
+            toward SAM.gov, USASpending, and public defense contract data to give Mission 
+            Solutions a real competitive edge in account planning.
+          </p>
+          <span class="prob-tag">Competitive Intelligence · Market Research · Account Planning</span>
+        </div>
+      </div>
+
+      <div class="prob reveal">
+        <div class="prob-n">03</div>
+        <div class="prob-body">
+          <h3>Briefings and Demos for Leadership &amp; Customers Require More Analytical Rigor</h3>
+          <p>
+            I've delivered data-driven PowerPoint briefings to 15+ cross-functional stakeholders — 
+            finance teams, operations managers, and C-suite — translating complex data into clear 
+            narratives. In government BD, briefings aren't generic slide decks; they need to 
+            show exactly how Valkyrie's capabilities solve a customer's specific operational 
+            challenge. My background in both data analysis and stakeholder communication 
+            bridges that gap.
+          </p>
+          <span class="prob-tag">Briefing Development · Executive Reporting · Data Storytelling</span>
+        </div>
+      </div>
+
+      <div class="prob reveal">
+        <div class="prob-n">04</div>
+        <div class="prob-body">
+          <h3>Reporting to Leadership and the Board Is Time-Consuming and Inconsistent</h3>
+          <p>
+            The JD specifically calls out weekly, monthly, quarterly, and annual internal 
+            reports to leadership and the board. At Choice Solutions, I reduced reporting 
+            cycle time by 30% and standardized KPI definitions — cutting stakeholder 
+            alignment time by 50%. I can build automated, consistent reporting templates 
+            that give Valkyrie leadership clean, trustworthy BD metrics every cycle.
+          </p>
+          <span class="prob-tag">Internal Reporting · KPI Development · Leadership Briefings</span>
+        </div>
+      </div>
+
+      <div class="prob reveal">
+        <div class="prob-n">05</div>
+        <div class="prob-body">
+          <h3>Acquisition Pathway Research Requires Analyst Hours That Are Always in Short Supply</h3>
+          <p>
+            Researching budget documents, acquisition strategies, and customer planning 
+            documents is painstaking work — but it's what separates a winning bid from 
+            a shot in the dark. I've done intensive research under pressure: Uber vs. Lyft 
+            market analysis, Super Bowl ROI modeling across 500+ campaigns, and 5-client 
+            freelance analytics delivery. I can bring that same structured, systematic 
+            research approach to government acquisition intelligence.
+          </p>
+          <span class="prob-tag">Acquisition Research · Proposal Support · Strategic Analysis</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━ WHY ME ━━━━━ -->
+<section id="whyme">
+  <div class="container">
+    <div class="section-label"><span>Data-Backed Fit</span></div>
+    <h2 class="section-title">The Numbers Behind the Hire</h2>
+    <p class="section-sub">
+      Not resume talking points. Each metric connects directly to what this role 
+      requires — and to what Mission Solutions is trying to accomplish.
+    </p>
+
+    <div class="metrics-grid">
+      <div class="mcard reveal">
+        <span class="big">$45K</span>
+        <p class="ctx">
+          <strong>In billing discrepancies identified</strong> via Python validation framework 
+          across 10,000+ weekly AP/AR transactions. The same systematic validation logic 
+          applies to auditing BD action trackers and pipeline data for accuracy.
+        </p>
+        <span class="src">Choice Solutions · 2023–24</span>
+      </div>
+
+      <div class="mcard reveal">
+        <span class="big">40%</span>
+        <p class="ctx">
+          <strong>Cross-team reporting errors eliminated</strong> after migrating 5,000+ 
+          customer records into Snowflake with centralized data governance. Clean pipeline 
+          data = confident BD decisions.
+        </p>
+        <span class="src">Choice Solutions · 2023–24</span>
+      </div>
+
+      <div class="mcard reveal">
+        <span class="big">50%</span>
+        <p class="ctx">
+          <strong>Stakeholder alignment time reduced</strong> by standardizing KPI definitions 
+          across finance and operations. In BD, faster internal alignment = faster proposals 
+          moving out the door.
+        </p>
+        <span class="src">Choice Solutions · 2023–24</span>
+      </div>
+
+      <div class="mcard reveal">
+        <span class="big">82%</span>
+        <p class="ctx">
+          <strong>Regression model accuracy</strong> predicting engagement across 500+ ad 
+          campaigns. Demonstrates the same analytical discipline needed to evaluate 
+          competitive BD opportunities and predict win probability.
+        </p>
+        <span class="src">DePaul — Super Bowl ROI Project · 2025</span>
+      </div>
+
+      <div class="mcard reveal">
+        <span class="big">5</span>
+        <p class="ctx">
+          <strong>End-to-end analytics engagements delivered solo</strong> as a self-employed 
+          consultant at age 21 — from SQL extraction to executive dashboard — generating 
+          $50K+ in combined revenue optimization. Proof of self-starter, minimal-supervision 
+          capability that the JD explicitly requires.
+        </p>
+        <span class="src">Freelance Consulting · 2022–23</span>
+      </div>
+
+      <div class="mcard reveal">
+        <span class="big">15+</span>
+        <p class="ctx">
+          <strong>Cross-functional stakeholders</strong> served with real-time business 
+          insights across finance and operations — delivering briefings, reports, and 
+          data-driven recommendations monthly. Directly mirrors the internal reporting 
+          requirements of this role.
+        </p>
+        <span class="src">Choice Solutions · 2023–24</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━ 30-60-90 ━━━━━ -->
+<section id="plan">
+  <div class="container">
+    <div class="section-label"><span>Execution Roadmap</span></div>
+    <h2 class="section-title">My 30-60-90 Day Plan for Mission Solutions</h2>
+    <p class="section-sub">
+      Concrete deliverables, not generic "learning" objectives. Each phase ends with 
+      something the team can actually use.
+    </p>
+
+    <div class="plan-grid">
+      <div class="pcard reveal">
+        <div class="pcard-dot dot-a">D1–30</div>
+        <h3>Audit &amp; Map</h3>
+        <span class="phase-tag">Listen before acting. Build the foundation.</span>
+        <ul>
+          <li>Shadow VP BD and Business Area Manager on active opportunities and account planning sessions</li>
+          <li>Review current pipeline tracking tools — identify gaps, redundancies, and data quality issues</li>
+          <li>Read acquisition documents and customer planning docs for top 3 active opportunities</li>
+          <li>Map competitor landscape for Mission Solutions portfolio using SAM.gov and USASpending data</li>
+          <li>Audit existing internal reporting cadence — understand what leadership actually reads</li>
+        </ul>
+        <div class="deliverable">
+          📋 Deliverable: "State of the BD Pipeline" — a 1-page internal audit memo 
+          with prioritized data quality recommendations by Day 30
+        </div>
+        <div class="tools">Tools: Excel · Outlook · PowerPoint · SAM.gov · SQL</div>
+      </div>
+
+      <div class="pcard reveal">
+        <div class="pcard-dot dot-b">D31–60</div>
+        <h3>Build &amp; Support</h3>
+        <span class="phase-tag">First real outputs hit the team's hands.</span>
+        <ul>
+          <li>Build standardized competitive intelligence brief template for Mission Solutions — covering 3 key competitors</li>
+          <li>Automate 1–2 recurring internal reports using Excel macros or Python — estimated 5–8 hrs/week recovered</li>
+          <li>Support active proposal and briefing development with research and data analysis</li>
+          <li>Develop and maintain action tracker for email/meeting follow-up across VP BD's initiatives</li>
+          <li>Research 2 new acquisition pathways relevant to current portfolio gaps</li>
+        </ul>
+        <div class="deliverable">
+          📊 Deliverable: Live competitive intelligence brief + automated reporting 
+          template delivered to leadership
+        </div>
+        <div class="tools">Tools: Python · Excel · PowerPoint · SQL · Outlook</div>
+      </div>
+
+      <div class="pcard reveal">
+        <div class="pcard-dot dot-c">D61–90</div>
+        <h3>Drive &amp; Measure</h3>
+        <span class="phase-tag">Quantifiable impact the team can present upward.</span>
+        <ul>
+          <li>Present 90-day BD intelligence analysis to Mission Solutions leadership — strategic findings + recommendations</li>
+          <li>Build quarterly pipeline review deck with win/loss analysis and opportunity quality scoring</li>
+          <li>Propose 1 process improvement to reduce BD reporting cycle time by ≥20%</li>
+          <li>Identify and size 1–2 new opportunity areas using customer budget documents and RFP trends</li>
+          <li>Establish repeatable competitive intelligence workflow the team can own after I'm gone</li>
+        </ul>
+        <div class="deliverable">
+          🎯 Deliverable: Executive-ready 90-day impact summary + recommended 
+          opportunity pipeline for Q3/Q4 targeting
+        </div>
+        <div class="tools">Tools: Python · R · PowerPoint · SQL · Excel · BigQuery</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━ PROJECTS ━━━━━ -->
+<section id="projects">
+  <div class="container">
+    <div class="section-label"><span>Proof of Work</span></div>
+    <h2 class="section-title">Projects That Mirror Valkyrie's BD Challenges</h2>
+    <p class="section-sub">
+      Each project maps directly to a core competency this role demands — 
+      market research, financial analysis, and structured intelligence delivery.
+    </p>
+
+    <div class="projects-grid">
+
+      <div class="pjcard reveal">
+        <span class="pj-cat">Market Intelligence &amp; Strategic Analysis</span>
+        <h3>Uber vs. Lyft: $144B Market Sizing &amp; Investment Thesis</h3>
+        <div class="pj-row">
+          <span class="pj-rl">The Problem</span>
+          <p>Which company deserves a BUY? Build a defensible position backed by quantitative research and competitive analysis — not opinion.</p>
+        </div>
+        <div class="pj-row">
+          <span class="pj-rl">My Approach</span>
+          <p>Mapped the $144B global ride-hailing market (18% CAGR), analyzed competitive dynamics (Waymo partnership, Uber Ads, APAC expansion), built a DCF model in Excel valuing NYSE: UBER, and assessed regulatory risk across multiple geographies.</p>
+        </div>
+        <div class="pj-row">
+          <span class="pj-rl">The Result</span>
+          <p>Delivered a BUY recommendation at ~$80.10/share in a clean executive PowerPoint briefing — clear, quantified, actionable. Directly mirrors how I'd develop competitive intelligence briefings for Valkyrie leadership.</p>
+        </div>
+        <span class="pj-badge">DCF · Market Sizing · Excel · Executive Briefing</span>
+      </div>
+
+      <div class="pjcard reveal">
+        <span class="pj-cat">Data Pipeline &amp; Reporting Infrastructure</span>
+        <h3>ERP Migration: 5,000+ Records Into Centralized Data Governance</h3>
+        <div class="pj-row">
+          <span class="pj-rl">The Problem</span>
+          <p>Fragmented customer data across legacy systems caused 40% reporting errors and slowed decision-making across finance and ops teams.</p>
+        </div>
+        <div class="pj-row">
+          <span class="pj-rl">My Approach</span>
+          <p>Led full ERP migration consolidating 5,000+ records into Snowflake data warehouse. Established centralized data governance framework and standardized KPI definitions across teams — reducing alignment time by 50%.</p>
+        </div>
+        <div class="pj-row">
+          <span class="pj-rl">The Result</span>
+          <p>40% reduction in cross-team reporting errors. 30% faster reporting cycles. 15+ stakeholders receiving real-time insights. Exactly the type of pipeline infrastructure needed to keep a growing BD operation running cleanly.</p>
+        </div>
+        <span class="pj-badge">SQL · Snowflake · Python · Data Governance</span>
+      </div>
+
+      <div class="pjcard reveal">
+        <span class="pj-cat">Analytics Consulting · Self-Directed Delivery</span>
+        <h3>$50K+ Revenue Optimization Across 5 SMB Clients — Solo</h3>
+        <div class="pj-row">
+          <span class="pj-rl">The Problem</span>
+          <p>Five small businesses across retail, e-commerce, and professional services needed data infrastructure and strategic insights — but had no analyst resources.</p>
+        </div>
+        <div class="pj-row">
+          <span class="pj-rl">My Approach</span>
+          <p>Delivered end-to-end: SQL data extraction, financial forecasting, Tableau dashboards with Google Analytics integration, customer segmentation to surface high-value targets. All solo, all on-time.</p>
+        </div>
+        <div class="pj-row">
+          <span class="pj-rl">The Result</span>
+          <p>$50K+ combined revenue optimization. 18% marketing ROI improvement for retail client. The JD requires someone who is a "self-starter that requires little supervision." This project is the evidence.</p>
+        </div>
+        <span class="pj-badge">SQL · Tableau · Google Analytics · Forecasting</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━ CTA ━━━━━ -->
+<section id="cta">
+  <div class="container">
+    <div class="section-label cta-label"><span>Let's Talk</span></div>
+    <h2>
+      Let's talk about what I can build for <em>Valkyrie's Mission Solutions</em> in week one.
+    </h2>
+    <p>
+      I don't need hand-holding. I show up with a plan, ask the right questions, 
+      and deliver usable work fast. If Valkyrie is looking for someone who can support 
+      the VP of BD from day one — I'm ready.
+    </p>
+    <div class="cta-row">
+      <a href="mailto:deepthi.singh66@gmail.com" class="btn-ember">
+        📧 deepthi.singh66@gmail.com
+      </a>
+      <a href="https://linkedin.com/in/[YOUR-LINKEDIN-SLUG]" target="_blank" class="btn-amber">
+        LinkedIn Profile
+      </a>
+      <a href="resume.pdf" class="btn-ghost">
+        Download Resume
+      </a>
+    </div>
+    <div class="contact-meta">
+      <a href="tel:3124046339">312-404-6339</a>
+      &nbsp;·&nbsp; Chicago, IL 60605
+      &nbsp;·&nbsp; MS Business Analytics, DePaul University (GPA 4.0) — graduating Nov 2026
+      &nbsp;·&nbsp; Clearance-eligible
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━ FOOTER ━━━━━ -->
+<footer>
+  Built by Deepthi Rajesh — not from a template. Targeted for Valkyrie Enterprises, Mission Solutions.
+  &nbsp;·&nbsp; <a href="mailto:deepthi.singh66@gmail.com">deepthi.singh66@gmail.com</a>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('in'), i * 80);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Stagger grid children
+  document.querySelectorAll('.intel-grid, .metrics-grid, .projects-grid, .plan-grid').forEach(grid => {
+    grid.querySelectorAll('.reveal').forEach((el, i) => {
+      el.style.transitionDelay = `${i * 0.1}s`;
+    });
+  });
+</script>
+</body>
+</html>
